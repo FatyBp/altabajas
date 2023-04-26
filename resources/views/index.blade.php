@@ -35,7 +35,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($items as $item)
+                        @foreach ($items as $item)
                             <tr>
                                 <td>{{$item->tipo}}</td>
                                 <td>{{$item->categoria}}</td>
@@ -50,7 +50,7 @@
                                     
                                 </td>
                             </tr>
-                            @endforeach
+                        @endforeach
                         </tbody>
                     </table>
                     @section('js')
@@ -117,3 +117,4 @@
   
   
     
+<a href="{{route('logout')}}">Salir del sistema</a>

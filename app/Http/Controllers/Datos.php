@@ -53,7 +53,7 @@ class Datos extends Controller
             // Redirigir a la pestaña de éxito con Sweet Alert de éxito
             $item->save();
             alert()->success('Guardado','Datos guardados');
-            return redirect('/')->with('success', 'Datos ingresados');
+            return redirect('/index')->with('success', 'Datos ingresados');
         }
     }
 
@@ -79,7 +79,7 @@ class Datos extends Controller
     public function edit($id)
     {
         $titulo = 'Actualizar';
-        $items = Dato:: find($id);
+        $items = Dato::find($id);
         return view('edit', compact('items', 'titulo'));
     }
 
@@ -100,7 +100,7 @@ class Datos extends Controller
         $item ->fecha = $request->fecha;
         $item->save();
         alert()->success('Actualizado','Datos Actualizados');
-        return redirect('/')->with('success', 'Datos ingresados');
+        return redirect('/index')->with('success', 'Datos ingresados');
     }
 
     /**
@@ -114,6 +114,6 @@ class Datos extends Controller
         $item = Dato::find($id);
         alert()->success('Eliminado','Datos eliminados');
         $item->delete();
-        return redirect('/');
+        return redirect('/index');
     }
 }
